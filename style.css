@@ -19,8 +19,36 @@
     font-weight: 400;
 }
 
-.navbar-light .navbar-nav .nav-link:hover {
+/* .navbar-light .navbar-nav .nav-link:hover {
     text-decoration: underline #000;
+    transition: all 0.3s ease;
+} */
+
+ul li a,
+ul li a:before {
+  transition: all .5s;
+}
+
+ul li a {
+    position: relative;
+}
+
+ul li a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: #5CB85F;
+  height: 1px;
+  transition: all 0.7s;
+}
+
+ul li a:hover:after {
+    width: 100%;
 }
 
 .button {
@@ -35,6 +63,7 @@
 
 .button:hover {
     background-color: #2f7e31;
+    transition: all .3s;
 }
 
 
@@ -42,7 +71,7 @@
     background-color: #f1f3ff;
 }
 
-#our-services, #why-us, #testimonial, #cta-banner, #faq {
+#our__services, #why__us, #testimonial, #cta__banner, #faq {
     padding-top: 100px;
 }
 
@@ -50,38 +79,51 @@ footer {
     padding-top: 150px;
 }
 
-.card-border {
+.card__border {
     border: 1px solid #D0D0D0;
 }
 
-.card-border:hover {
-    background-color: #c5c3c3;
+.card__border--warning:hover {
+    background-color: #F9CC00;
+    color: #fff;
+}
+
+.card__border--danger:hover {
+    background-color: #FA2C5A;
+    color: #fff;
+}
+
+.card__border--darkblue:hover {
+    background-color: #0D28A6;
+    color: #fff;
+}
+
+.card__border--limegreen:hover {
+    background-color: #5CB85F;
+    color: #fff;
 }
 
 .services {
     margin-top: 10px;
 }
 
-.bg-aliceblue {
+.bg--aliceblue {
     background-color: #f1f3ff;
 }
 
-.bg-primary-darkblue {
-    background-color: #0d28a6;
-}
-
-.testimonial-rating {
+.testimonial__rating {
     max-height: 16px;
 }
 
-.testimonial-name {
+.testimonial__name {
     font-weight: bold;
     font-size: 14px;
     text-decoration: none;
     color: black;
     line-height: 0px;
 }
-.testimonial-media {
+
+.testimonial__media {
     margin-top: 20px;
     text-decoration: none;
     display: inline-block;
@@ -90,21 +132,30 @@ footer {
     color: black;
     border-radius: 50%;
 }
-.testimonial-media:hover {
+
+.testimonial__img {
+    transition: transform .2s;
+}
+
+.testimonial__img:hover {
+    transform: scale(1.26);
+}
+
+.testimonial__media:hover {
   background-color: #04AA6D;
   color: white;
 }
 
-.cta-banner {
+.cta__banner {
     background-color: #0D28A6;
     border-radius: 13px;
 }
 
-.cta-banner > .col {
+.cta__banner > .col {
     margin-top: 64px;
 }
 
-.cta-banner > .col > button {
+.cta__banner > .col > button {
     margin-top: 52px;
     margin-bottom: 64px;
 }
@@ -143,28 +194,18 @@ h2 {
     font-weight: 700;
     font-size: 36px;
     line-height: 150%;
-    color: #000;
-}
-
-h2 {
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 150%;
-    color: #000;
 }
 
 p {
     font-weight: 300;
     font-size: 14px;
     line-height: 20px;
-    color: #000;
 }
 
 h3 {
     font-weight: 700;
     font-size: 24px;
     line-height: 36px;
-    color: #000;
 }
 
 h5 {
@@ -187,14 +228,25 @@ h5 {
 
 /* Animation */
 .img-car {
-    animation: Zoom 3s infinite;
+    animation: RightToLeft 2s;
 }
 
 .services img:hover {
     animation: UpAndDown 1s infinite;
 }
 
+.text__animation {
+    animation: LeftToRight 2s;
+}
 
+@keyframes LeftToRight {
+    0% {
+        transform: translateX(-300px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
 
 @keyframes UpAndDown {
     0%, 100% {
@@ -205,15 +257,12 @@ h5 {
     }
 }
 
-@keyframes Zoom {
+@keyframes RightToLeft {
     0% {
-        transform: scale(0.8,0.8);
-    }
-    50% {
-        transform: scale(1.1,1.1);
+        transform: translateX(300px);
     }
     100% {
-        transform: scale(0.8,0.8);
+        transform: translateX(0);
     }
 }
 
@@ -225,5 +274,9 @@ h5 {
 
     #why-us .col-md-3 {
         margin-top: 10px;
+    }
+
+    #carouselExampleControls {
+        min-width: 90%;
     }
   }
