@@ -19,11 +19,6 @@
     font-weight: 400;
 }
 
-/* .navbar-light .navbar-nav .nav-link:hover {
-    text-decoration: underline #000;
-    transition: all 0.3s ease;
-} */
-
 ul li a,
 ul li a:before {
   transition: all .5s;
