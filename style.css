@@ -322,7 +322,7 @@ h5 {
 @media only screen and (max-width: 600px) {
     /* Navbar */
     .navbar {
-        position: unset;
+        /* position: unset; */
     }
     .navbar span, .btn__offcanvas {
         display: block;
